@@ -2,6 +2,7 @@
   "name": "jack-rose-website",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@3.6.3",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,8 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^12.6.3",
     "lucide-react": "^0.487.0",
+    "motion": "^12.6.3",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

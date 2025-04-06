@@ -2484,8 +2484,8 @@ __metadata:
     "@types/react-dom": ^19
     eslint: ^9
     eslint-config-next: 15.2.4
-    framer-motion: ^12.6.3
     lucide-react: ^0.487.0
+    motion: ^12.6.3
     next: 15.2.4
     react: ^19.0.0
     react-dom: ^19.0.0
@@ -2808,6 +2808,27 @@ __metadata:
   version: 12.6.3
   resolution: "motion-utils@npm:12.6.3"
   checksum: 09eebcd883566f706de7f5a7402d6f0a1ad7a5af526903abd8b1f8024728f2720308a1409319938dd2dad875cfd4e520cfb2a9754aa3b6a64597e9e66ef6273b
+  languageName: node
+  linkType: hard
+
+"motion@npm:^12.6.3":
+  version: 12.6.3
+  resolution: "motion@npm:12.6.3"
+  dependencies:
+    framer-motion: ^12.6.3
+    tslib: ^2.4.0
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: e6ca0fa80d9a2737f70077458012a100072963aa091e88e36341bc33443dff2abc2f93d95fd90b0aefbd98692c8c11d134d11e3ab42ba2f5c6c72c31c6d276e1
   languageName: node
   linkType: hard
 
