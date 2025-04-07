@@ -63,15 +63,21 @@ export const Bubbles = () => {
             WebkitBackdropFilter: `blur(${bubble.blur}px)`,
             backgroundColor: "rgba(255, 255, 255, 0.01)",
           }}
-          initial={{ y: "120vh" }}
+          initial={{ y: "120vh", x: 0 }}
           animate={{
             y: "-120vh",
+            x: [0, 50, -50, 0], // This creates the weaving motion
           }}
           transition={{
             duration: bubble.duration,
             repeat: Infinity,
-            ease: "easeIn",
+            ease: "easeInOut",
             delay: bubble.delay,
+            x: {
+              duration: bubble.duration / 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
           }}
         />
       ))}
