@@ -2,9 +2,9 @@ import { Bubbles } from "./Bubbles";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center pt-16">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center pt-16 overflow-hidden gradient-background">
       <Bubbles />
-      <div className="container mx-auto px-4 relative z-[10]">
+      <div className="container mx-auto px-4 relative z-[2]">
         <div className="relative font-[family-name:var(--font-inter)]">
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-none mb-8">
             <span className="bg-gradient-to-r from-red-500 to-red-400">

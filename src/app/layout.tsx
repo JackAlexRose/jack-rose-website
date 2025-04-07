@@ -27,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${interTight.variable} antialiased gradient-background`}
-      >
+      <body className={`${inter.variable} ${interTight.variable} antialiased`}>
         <Navbar />
         {children}
         <Analytics />
