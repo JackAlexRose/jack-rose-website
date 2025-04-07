@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MobileMenu } from "@/components/mobile-menu";
+import { ProfileLink } from "@/components/ProfileLink";
 
 export function Navbar() {
   return (
@@ -7,9 +8,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="font-medium">
-              Jack Rose
-            </Link>
+            <ProfileLink />
           </div>
 
           <nav className="hidden md:block">
