@@ -47,8 +47,8 @@ export const Bubbles = () => {
   }, [isMobile]); // Recreate bubbles when screen size changes
 
   return (
-    <div className="inset-0 pointer-events-none overflow-hidden z-[100]">
-      {bubbles.map((bubble, index) => (
+    <div className="inset-0 pointer-events-none overflow-hidden z-[100] h-full">
+      {bubbles.map((bubble) => (
         <motion.div
           key={bubble.id}
           className="absolute rounded-full"
@@ -63,16 +63,16 @@ export const Bubbles = () => {
             WebkitBackdropFilter: `blur(${bubble.blur}px)`,
             backgroundColor: "rgba(255, 255, 255, 0.01)",
           }}
-          initial={{ y: "100vh", x: 0 }}
+          initial={{ y: "50vh", x: 0 }}
           animate={{
             y: "-120vh",
-            x: [0, 50, -50, 0], // This creates the weaving motion
+            x: [0, 70, -70, 0], // This creates the weaving motion
           }}
           transition={{
             duration: bubble.duration,
             repeat: Infinity,
-            ease: "easeOut",
-            delay: index < 3 ? 0 : bubble.delay,
+            ease: "easeInOut",
+            delay: bubble.delay,
             x: {
               duration: bubble.duration / 2,
               repeat: Infinity,
