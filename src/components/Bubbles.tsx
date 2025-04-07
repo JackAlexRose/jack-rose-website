@@ -38,7 +38,7 @@ export const Bubbles = () => {
         (isMobile ? Math.random() * 15 + 10 : Math.random() * 20 + 5) *
         (window.innerWidth / 100), // vw-based size
       left: Math.random() * 100,
-      delay: i < 2 ? 0 : Math.random() * 10, // First two bubbles start immediately
+      delay: Math.random() * 10,
       duration: Math.random() * 10 + 15,
       borderWidth: isMobile ? Math.random() * 2 + 2 : Math.random() * 3 + 4, // Smaller borders on mobile
       blur: isMobile ? Math.random() * 4 + 3 : Math.random() * 8 + 5, // Less blur on mobile
@@ -48,7 +48,7 @@ export const Bubbles = () => {
 
   return (
     <div className="inset-0 pointer-events-none overflow-hidden z-[100]">
-      {bubbles.map((bubble) => (
+      {bubbles.map((bubble, index) => (
         <motion.div
           key={bubble.id}
           className="absolute rounded-full"
@@ -71,8 +71,8 @@ export const Bubbles = () => {
           transition={{
             duration: bubble.duration,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: bubble.delay,
+            ease: "easeOut",
+            delay: index < 3 ? 0 : bubble.delay,
             x: {
               duration: bubble.duration / 2,
               repeat: Infinity,
