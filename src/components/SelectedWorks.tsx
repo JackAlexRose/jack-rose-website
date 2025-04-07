@@ -38,7 +38,7 @@ export const SelectedWorks = () => {
       testimonial: {
         quote:
           "The new website has transformed how we communicate with our fans and manage our club information.",
-        author: "Dave Mudge",
+        author: "Charlie Pope",
         role: "Club Secretary",
       },
     },
