@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DecorativeIllustration } from "./DecorativeIllustration";
+import { Peekaboo } from "./Peekaboo";
 interface Project {
   id: string;
   title: string;
@@ -57,7 +57,7 @@ export const SelectedWorks = () => {
           of
         </h2>
         <div className="relative">
-          <DecorativeIllustration />
+          <Peekaboo />
           <hr className="my-8" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

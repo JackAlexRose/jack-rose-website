@@ -1,16 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
-export const DecorativeIllustration = () => {
+export const Peekaboo = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className="absolute bottom-0 right-0 md:right-10 overflow-hidden">
       <motion.div
-        initial={{ y: 140 }}
+        initial={{ y: 100 }}
         whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: shouldReduceMotion ? 0.3 : 2,
+          ease: "easeOut",
+        }}
       >
         <Image
           src="/my-body.png"
