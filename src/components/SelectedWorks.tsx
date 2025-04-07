@@ -42,6 +42,18 @@ export const SelectedWorks = () => {
         role: "Club Secretary",
       },
     },
+    {
+      id: "website",
+      title: "This Website",
+      category: "Personal website",
+      image: "/images/projects/website.png",
+      link: "/work",
+      testimonial: {
+        quote: "Very good",
+        author: "Me",
+        role: "Myself",
+      },
+    },
   ];
 
   return (
