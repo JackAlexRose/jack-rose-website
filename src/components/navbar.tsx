@@ -8,7 +8,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
             <Link href="/" className="font-medium">
-              JR
+              Jack Rose
             </Link>
           </div>
 

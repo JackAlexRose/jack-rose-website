@@ -11,7 +11,6 @@ interface Bubble {
   duration: number;
   borderWidth: number;
   blur: number;
-  zIndex: number;
 }
 
 export const Bubbles = () => {
@@ -36,14 +35,13 @@ export const Bubbles = () => {
     const initialBubbles = Array.from({ length: 6 }, (_, i) => ({
       id: i,
       size:
-        (isMobile ? Math.random() * 15 + 10 : Math.random() * 25 + 15) *
+        (isMobile ? Math.random() * 15 + 10 : Math.random() * 20 + 5) *
         (window.innerWidth / 100), // vw-based size
       left: Math.random() * 100,
       delay: Math.random() * 10,
       duration: Math.random() * 10 + 15,
       borderWidth: isMobile ? Math.random() * 2 + 2 : Math.random() * 3 + 4, // Smaller borders on mobile
       blur: isMobile ? Math.random() * 4 + 3 : Math.random() * 8 + 5, // Less blur on mobile
-      zIndex: 5,
     }));
     setBubbles(initialBubbles);
   }, [isMobile]); // Recreate bubbles when screen size changes
@@ -64,7 +62,6 @@ export const Bubbles = () => {
             backdropFilter: `blur(${bubble.blur}px)`,
             WebkitBackdropFilter: `blur(${bubble.blur}px)`,
             backgroundColor: "rgba(255, 255, 255, 0.01)",
-            zIndex: bubble.zIndex,
           }}
           initial={{ y: "120vh" }}
           animate={{
@@ -73,7 +70,7 @@ export const Bubbles = () => {
           transition={{
             duration: bubble.duration,
             repeat: Infinity,
-            ease: "linear",
+            ease: "easeIn",
             delay: bubble.delay,
           }}
         />
