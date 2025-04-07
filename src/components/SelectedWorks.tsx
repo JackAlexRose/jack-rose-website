@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { DecorativeIllustration } from "./DecorativeIllustration";
 interface Project {
   id: string;
   title: string;
   category: string;
   image: string;
   link: string;
+  testimonial?: {
+    quote: string;
+    author: string;
+    role?: string;
+  };
 }
 
 export const SelectedWorks = () => {
@@ -17,6 +22,12 @@ export const SelectedWorks = () => {
       category: "Psychotherapist website",
       image: "/images/projects/daisy.png",
       link: "/work/daisy",
+      testimonial: {
+        quote:
+          "Jack created exactly what I wanted - a clean, professional website that represents my practice perfectly.",
+        author: "Daisy Walton-Ellis",
+        role: "Psychotherapist",
+      },
     },
     {
       id: "burpham",
@@ -24,6 +35,12 @@ export const SelectedWorks = () => {
       category: "Local football club website",
       image: "/images/projects/burpham-fc.png",
       link: "/work/burpham-fc",
+      testimonial: {
+        quote:
+          "The new website has transformed how we communicate with our fans and manage our club information.",
+        author: "Dave Mudge",
+        role: "Club Secretary",
+      },
     },
   ];
 
@@ -40,21 +57,13 @@ export const SelectedWorks = () => {
           of
         </h2>
         <div className="relative">
-          <div className="absolute bottom-0 right-0 md:right-10">
-            <Image
-              src="/my-body.png"
-              alt="Small decorative illustration"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-          </div>
+          <DecorativeIllustration />
           <hr className="my-8" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <p className="uppercase text-lg font-medium tracking-wide">
-              PROJECTS
+              MY WORK
             </p>
           </div>
 
@@ -71,17 +80,34 @@ export const SelectedWorks = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="transform transition-all duration-300 hover:-translate-y-2.5"
+              className="transform transition-all duration-300 hover:-translate-y-2.5 relative group"
             >
               <Link href={project.link} className="block">
-                <div className="overflow-hidden rounded-lg">
+                <div className="overflow-hidden rounded-lg relative">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {project.testimonial && (
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-center">
+                      <p className="text-white text-lg italic mb-4">
+                        &ldquo;{project.testimonial.quote}&rdquo;
+                      </p>
+                      <div className="text-white">
+                        <p className="font-semibold">
+                          {project.testimonial.author}
+                        </p>
+                        {project.testimonial.role && (
+                          <p className="text-sm text-gray-300">
+                            {project.testimonial.role}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-2xl font-bold mt-4">{project.title}</h3>
                 <p className="text-sm mt-1">{project.category}</p>
