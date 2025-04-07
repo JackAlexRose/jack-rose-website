@@ -21,7 +21,7 @@ export const SelectedWorks = () => {
       title: "Daisy Walton-Ellis",
       category: "Psychotherapist website",
       image: "/images/projects/daisy.png",
-      link: "/work/daisy",
+      link: "/work",
       testimonial: {
         quote:
           "Jack created exactly what I wanted - a clean, professional website that represents my practice perfectly.",
@@ -34,7 +34,7 @@ export const SelectedWorks = () => {
       title: "Burpham FC",
       category: "Local football club website",
       image: "/images/projects/burpham-fc.png",
-      link: "/work/burpham-fc",
+      link: "/work",
       testimonial: {
         quote:
           "The new website has transformed how we communicate with our fans and manage our club information.",
