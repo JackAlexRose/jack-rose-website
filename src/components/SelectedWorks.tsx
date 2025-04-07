@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
 
 interface Project {
   id: string;
@@ -72,10 +69,9 @@ export const SelectedWorks = () => {
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <motion.div
+            <div
               key={project.id}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
+              className="transform transition-all duration-300 hover:-translate-y-2.5"
             >
               <Link href={project.link} className="block">
                 <div className="overflow-hidden rounded-lg">
@@ -90,7 +86,7 @@ export const SelectedWorks = () => {
                 <h3 className="text-2xl font-bold mt-4">{project.title}</h3>
                 <p className="text-sm mt-1">{project.category}</p>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
