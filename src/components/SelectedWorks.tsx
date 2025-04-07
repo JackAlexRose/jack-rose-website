@@ -28,7 +28,7 @@ export const SelectedWorks = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#c8d6eb]">
+    <section className="py-20 px-4 bg-[var(--background-secondary)]">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none mb-4">
           Projects I
