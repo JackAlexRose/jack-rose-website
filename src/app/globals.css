@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --background-secondary: #d3dbf2;
+  --background-tertiary: #f2ead3;
 }
 
 @theme inline {
@@ -11,6 +12,44 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-inter-tight);
+}
+
+/* Hero animation keyframes */
+@keyframes slide-in-overshoot {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in-overshoot 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  opacity: 0;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
 }
 
 body {

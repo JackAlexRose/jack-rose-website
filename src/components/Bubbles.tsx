@@ -11,6 +11,8 @@ interface Bubble {
   duration: number;
   borderWidth: number;
   blur: number;
+  startY: string;
+  repeat: number;
 }
 
 export const Bubbles = () => {
@@ -32,16 +34,18 @@ export const Bubbles = () => {
 
   useEffect(() => {
     // Create initial bubbles with responsive sizes
-    const initialBubbles = Array.from({ length: 7 }, (_, i) => ({
+    const initialBubbles = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       size:
         (isMobile ? Math.random() * 15 + 10 : Math.random() * 20 + 5) *
         (window.innerWidth / 100), // vw-based size
       left: Math.random() * 100,
-      delay: Math.random() * 10,
+      delay: i < 1 ? 0 : Math.random() * 10,
       duration: Math.random() * 10 + 15,
       borderWidth: isMobile ? Math.random() * 2 + 2 : Math.random() * 3 + 4, // Smaller borders on mobile
       blur: isMobile ? Math.random() * 4 + 3 : Math.random() * 8 + 5, // Less blur on mobile
+      startY: i < 1 ? `${Math.random() * 30}vh` : "50vh",
+      repeat: i < 1 ? 0 : Infinity,
     }));
     setBubbles(initialBubbles);
   }, [isMobile]); // Recreate bubbles when screen size changes
@@ -57,20 +61,20 @@ export const Bubbles = () => {
             height: bubble.size,
             left: `${bubble.left}%`,
             borderStyle: "solid",
-            borderColor: "rgb(0, 0, 0)",
+            borderColor: "black",
             borderWidth: bubble.borderWidth,
             backdropFilter: `blur(${bubble.blur}px)`,
             WebkitBackdropFilter: `blur(${bubble.blur}px)`,
             backgroundColor: "rgba(255, 255, 255, 0.01)",
           }}
-          initial={{ y: "50vh", x: 0 }}
+          initial={{ y: bubble.startY, x: 0 }}
           animate={{
             y: "-120vh",
             x: [0, 70, -70, 0], // This creates the weaving motion
           }}
           transition={{
             duration: bubble.duration,
-            repeat: Infinity,
+            repeat: bubble.repeat,
             ease: "easeInOut",
             delay: bubble.delay,
             x: {

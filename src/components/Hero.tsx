@@ -5,18 +5,20 @@ export const Hero = () => {
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center pt-16 overflow-hidden gradient-background">
       <Bubbles />
       <div className="container mx-auto px-4 relative z-[2]">
-        <div className="relative font-[family-name:var(--font-inter)]">
+        <div className="relative font-[family-name:var(--font-inter)] mb-8">
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-none mb-8">
-            <span className="bg-gradient-to-r from-red-500 to-red-400">
+            <span className="bg-gradient-to-r from-red-500 to-red-400 inline-block animate-slide-in">
               Jack Rose
             </span>
           </h1>
           <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-none">
-            <span className="block">Creative</span>
-            <span className="block md:pl-24 lg:pl-48 xl:pl-64">
+            <span className="block animate-slide-in animation-delay-100">
+              Creative
+            </span>
+            <span className="block md:pl-24 lg:pl-48 xl:pl-64 animate-slide-in animation-delay-200">
               Software Engineering
             </span>
-            <span className="block md:pl-48 lg:pl-96 xl:pl-[30rem]">
+            <span className="block md:pl-48 lg:pl-96 xl:pl-[30rem] animate-slide-in animation-delay-300">
               <span className="bg-gradient-to-r from-red-500 to-red-400">
                 & Other{" "}
               </span>{" "}

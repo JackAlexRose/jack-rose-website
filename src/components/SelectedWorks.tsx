@@ -42,18 +42,6 @@ export const SelectedWorks = () => {
         role: "Club Secretary",
       },
     },
-    {
-      id: "website",
-      title: "This Website",
-      category: "Personal website",
-      image: "/images/projects/website.png",
-      link: "/work",
-      testimonial: {
-        quote: "Very good",
-        author: "Me",
-        role: "Myself",
-      },
-    },
   ];
 
   return (
@@ -83,7 +71,7 @@ export const SelectedWorks = () => {
             <p className="text-lg max-w-xl">
               I&apos;m a fullstack engineer who just wants to collaborate with
               good people and organisations to build beautiful, functional
-              websites and applications that we can both be proud of.
+              websites and applications that we can all be proud of.
             </p>
           </div>
         </div>
